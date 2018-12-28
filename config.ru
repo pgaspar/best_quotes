@@ -1,5 +1,3 @@
-app = proc do
-  [200, { 'Content-Type' => 'text/html' }, ['Hello, world!']]
-end
+require_relative 'config/application'
 
-run(app)
+run BestQuotes::Application.new
