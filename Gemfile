@@ -1,2 +1,3 @@
 source 'https://rubygems.org'
-gem 'tails'
+gem 'tails', path: '../tails'
+gem 'rack'
