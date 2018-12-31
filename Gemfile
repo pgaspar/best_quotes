@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'tails', path: '../tails'
-gem 'rack'
 
 # Code reloading on change
 group :development do
