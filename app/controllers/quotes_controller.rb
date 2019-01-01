@@ -4,7 +4,7 @@ class QuotesController < Tails::Controller
   end
 
   def quote_1
-    quote = Tails::Model::FileModel.find(1)
+    quote = FileModel.find(1)
     render :quote, obj: quote
   end
 
