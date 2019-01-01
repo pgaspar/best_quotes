@@ -3,6 +3,11 @@ class QuotesController < Tails::Controller
     render :a_quote, noun: :winking
   end
 
+  def quote_1
+    quote = Tails::Model::FileModel.find(1)
+    render :quote, obj: quote
+  end
+
   def test
     'Hello from my controller!' + "\n<pre>\n#{env}\n</pre>"
   end

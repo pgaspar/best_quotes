@@ -3,6 +3,7 @@ PATH
   specs:
     tails (0.1.0)
       erubis
+      multi_json
       rack
       rake (~> 10.0)
 
@@ -15,6 +16,7 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
+    multi_json (1.13.1)
     rack (2.0.6)
     rake (10.5.0)
     rb-fsevent (0.10.3)
