@@ -16,10 +16,7 @@ class QuotesController < Tails::Controller
   end
 
   def update
-    id = params['id']
-    quote = FileModel.find(id)
-    raise "Couldn't find quote with ID: #{id.inspect}" unless quote
-
+    quote = find_quote
     quote['submitter'] = params['submitter'] if params['submitter']
     quote['quote'] = params['quote'] if params['quote']
     quote['attribution'] = params['attribution'] if params['attribution']
@@ -32,8 +29,8 @@ class QuotesController < Tails::Controller
     render :a_quote, noun: :winking
   end
 
-  def quote_1
-    quote = FileModel.find(1)
+  def show
+    quote = find_quote
     render :quote, obj: quote
   end
 
@@ -41,5 +38,15 @@ class QuotesController < Tails::Controller
     'Hello from my controller!' \
       "\n<pre>\n#{env}\n</pre>" \
       "\n<pre>\n#{params}\n</pre>"
+  end
+
+  private
+
+  def find_quote
+    id = params['id']
+    quote = FileModel.find(id)
+    raise "Couldn't find quote with ID: #{id.inspect}" unless quote
+
+    quote
   end
 end
