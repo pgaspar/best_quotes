@@ -1,0 +1,8 @@
+<b><%= submitter %></b>
+
+<ul>
+  <% quotes.each do |q| %>
+    <li><a href="/quotes/show?id=<%= q.id %>"><%= q['quote'] %></a></li>
+  <% end %>
+</ul>
+
